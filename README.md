@@ -20,7 +20,7 @@ options:
   --path PATH  Path where found the files
 ```
 
-### Example for convert
+### Example for plot
 
 ```
 python3 Plot_gpx_file.py

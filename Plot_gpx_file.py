@@ -1,5 +1,5 @@
 from gpx_converter import Converter
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 import os
 import argparse
 
@@ -15,9 +15,15 @@ def convert_gpx_to_dataframe(gpx_file):
     dataframe: dataframe with the .gpx file data
     """
 
-    dataframe = Converter(input_file=gpx_file).gpx_to_dataframe(lats_colname='latitude', longs_colname='longitude', times_colname='time', alts_colname='altitude')
+    dataframe = Converter(input_file=gpx_file).gpx_to_dataframe(
+        lats_colname="latitude",
+        longs_colname="longitude",
+        times_colname="time",
+        alts_colname="altitude",
+    )
 
     return dataframe
+
 
 def plot_dataframe(df):
     """
@@ -29,21 +35,22 @@ def plot_dataframe(df):
     Plot latitude vs longitude
     """
 
-    #Extract data
+    # Extract data
     longitude = df.longitude
     latitude = df.latitude
 
-    #Plot
+    # Plot
     plt.scatter(longitude, latitude)
-    plt.plot(longitude, latitude, 'r--')
- 
+    plt.plot(longitude, latitude, "r--")
+
     # Labels
-    plt.title('Longitude vs Latitude')
-    plt.xlabel('Latitude')
-    plt.ylabel('Longitude')
+    plt.title("Longitude vs Latitude")
+    plt.xlabel("Latitude")
+    plt.ylabel("Longitude")
 
     plt.grid()
     plt.show()
+
 
 def get_comline_parser():
     parser = argparse.ArgumentParser(description="Search files")
@@ -65,5 +72,5 @@ if __name__ == "__main__":
             print("I found the file {}".format(gpx_file))
 
             dataframe = convert_gpx_to_dataframe(gpx_file)
-           
+
             plot_dataframe(dataframe)
