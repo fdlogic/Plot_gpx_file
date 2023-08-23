@@ -2,3 +2,5 @@ argparse
 gpx-converter
 matplotlib
 black
+isort	
+interrogate

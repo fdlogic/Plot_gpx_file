@@ -1,7 +1,8 @@
-from gpx_converter import Converter
-import matplotlib.pyplot as plt
-import os
 import argparse
+import os
+
+import matplotlib.pyplot as plt
+from gpx_converter import Converter
 
 
 def convert_gpx_to_dataframe(gpx_file):
