@@ -4,3 +4,4 @@ matplotlib
 black
 isort	
 interrogate
+pdoc3
